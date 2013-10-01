@@ -32,8 +32,8 @@ import android.widget.ListView;
 import com.example.thiswayup.R;
 
 /**
- * This example illustrates a common usage of the DrawerLayout widget
- * in the Android support library.
+ * Base class implementing common usage of the DrawerLayout widget in the Android support
+ * library.
  * <p/>
  * <p>When a navigation (left) drawer is present, the host activity should detect presses of
  * the action bar's Up affordance as a signal to open and close the navigation drawer. The
@@ -96,6 +96,12 @@ public abstract class BaseDrawerActivity extends FragmentActivity {
         }
     }
     
+    /**
+     * Setup a navigation drawer for this activity
+     * 
+     * @param useDrawerIndicator true to always use the draw indicator, false to
+     * use the standard Up indicator when the drawer is closed.
+     */
     protected void setupNavDrawer(final Boolean useDrawerIndicator) {
     	
     	mDrawerTitles = getResources().getStringArray(R.array.drawer_array);
@@ -139,6 +145,11 @@ public abstract class BaseDrawerActivity extends FragmentActivity {
     	
     }
 
+    /**
+     * Called when a navigation drawer item is selected, to be implemented by subclasses.
+     * 
+     * @param position the position of the selected drawer item.
+     */
     protected abstract void onDrawerItemSelected(int position);
     
     protected void setDrawerItemChecked(int position, boolean value) {

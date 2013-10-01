@@ -15,6 +15,11 @@ import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
 import com.example.thiswayup.R;
 
+/**
+ * This example illustrates usage of the DrawerLayout widget for an activity deep within an
+ * application navigation hierarchy.
+ * 
+ */
 public class DetailDrawerActivity extends BaseDrawerActivity implements OnItemClickListener {
 
 	public static final String ARG_ID = "com.example.thiswayup.ID";
@@ -67,7 +72,17 @@ public class DetailDrawerActivity extends BaseDrawerActivity implements OnItemCl
 
 	@Override
 	protected void onDrawerItemSelected(int position) {
-		// TODO Auto-generated method stub
+		
+		// As we are outside the root Activity, we should perform
+		// 'Selective Up' navigation, recreating our task stack in
+		// the process.
+		
+		// Selective Up allows a user to jump across an app's navigation 
+		// hierarchy at will. The application should treat this as it treats
+		// Up navigation from a different task, replacing the current task
+		// stack using TaskStackBuilder or similar. This is the only form of
+		// navigation drawer that should be used outside of the root activity
+		// of a task.
 		
 		TaskStackBuilder ts = TaskStackBuilder.create(this)
         	.addParentStack(this);
