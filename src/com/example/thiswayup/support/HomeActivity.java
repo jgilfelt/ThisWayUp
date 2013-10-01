@@ -15,6 +15,11 @@ import android.widget.TextView;
 import com.example.thiswayup.Data;
 import com.example.thiswayup.R;
 
+/**
+ * This Activity can be considered 'home' for the Up navigation samples
+ * even though it is a descendant of SamplesListActivity.
+ * 
+ */
 public class HomeActivity extends Activity implements OnItemClickListener {
 
 	ListView mList;
@@ -41,7 +46,13 @@ public class HomeActivity extends Activity implements OnItemClickListener {
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+        	// This ID represents the Home or Up button. Since we
+        	// know we can never reach this particular Activity from
+        	// a different task, we can trivially call the following
+        	// which will navigate up one level in the application 
+        	// structure we have defined in the manifest.
             NavUtils.navigateUpFromSameTask(this);
             return true;
         }

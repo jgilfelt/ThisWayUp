@@ -47,7 +47,7 @@ public class SampleAppWidget extends AppWidgetProvider {
 	static void updateAppWidget(Context context,
 			AppWidgetManager appWidgetManager, int appWidgetId) {
 
-		// An arbitrary movie to show a notification for
+		// An arbitrary movie to display
 		Movie movie = Data.getMovie(2);
 
 		// Construct the RemoteViews object
@@ -59,22 +59,22 @@ public class SampleAppWidget extends AppWidgetProvider {
 		// using TaskStackBuilder that includes a complete upward navigation path to
 		// our app's topmost screen.
 		
-		TaskStackBuilder ts = TaskStackBuilder.create(context)
+		TaskStackBuilder tsb = TaskStackBuilder.create(context)
 			// Add all parent activities for the DetaiActivity we will launch 
 			// from the app widget
 			.addParentStack(DetailActivity.class);
 		// Edit any Intents in the newly constructed task stack
 		// to supply the extras we need
-		ts.editIntentAt(ts.getIntentCount()-1)
+		tsb.editIntentAt(tsb.getIntentCount()-1)
 			.putExtra(CategoryActivity.ARG_GENRE, movie.getGenre());
 		// Add the DetailActivity with the appropriate extras to display
 		// the relevant movie
-		ts.addNextIntent(new Intent(context, DetailActivity.class)
+		tsb.addNextIntent(new Intent(context, DetailActivity.class)
 			.putExtra(DetailActivity.ARG_ID, movie.getId())
 			.putExtra(DetailActivity.ARG_INFO, context.getString(R.string.info_detail_from_widget)));
 
 		// Supply a pending intent to launch the task defined by the constructed stack
-		views.setOnClickPendingIntent(R.id.appwidget_text, ts.getPendingIntent(1, PendingIntent.FLAG_CANCEL_CURRENT));   
+		views.setOnClickPendingIntent(R.id.appwidget_text, tsb.getPendingIntent(1, PendingIntent.FLAG_CANCEL_CURRENT));   
 
 		// Instruct the widget manager to update the widget
 		appWidgetManager.updateAppWidget(appWidgetId, views);

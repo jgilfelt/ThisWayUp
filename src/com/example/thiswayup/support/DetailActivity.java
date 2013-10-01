@@ -19,6 +19,16 @@ import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
 import com.example.thiswayup.R;
 
+/**
+ * Activity that accepts a integer extra in its Intent bundle or data
+ * supplied from a http deep link that represents an id for which 
+ * to display details for a particular movie.
+ * 
+ * Because we can navigate to this Activity from an outside task, we must
+ * query NavUtils.shouldUpRecreateTask when handling Up navigation. See
+ * the implementation in onOptionsItemSelected.
+ *
+ */
 public class DetailActivity extends Activity implements OnItemClickListener {
 
 	public static final String ARG_ID = "com.example.thiswayup.ID";
@@ -40,7 +50,7 @@ public class DetailActivity extends Activity implements OnItemClickListener {
 		String infoText = null;
 		
 		if (data != null) {
-			// launched externally
+			// Activity was launched externally from a deep link
 			String id = data.getLastPathSegment();
 			mId = Integer.parseInt(id);
 			infoText = getString(R.string.info_detail_from_outside_task);
@@ -73,16 +83,26 @@ public class DetailActivity extends Activity implements OnItemClickListener {
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == android.R.id.home) {
+		switch (item.getItemId()) {
+		// Respond to the action bar's Up/Home button
+		case android.R.id.home:
+			// Retrieve this Activiy's parent Up intent
             Intent upIntent = NavUtils.getParentActivityIntent(this);
             if (NavUtils.shouldUpRecreateTask(this, upIntent)) {
+            	// This activity is NOT part of this app's task, so create a new task
+                // when navigating up, with a synthesized back stack.
             	TaskStackBuilder tsb = TaskStackBuilder.create(this)
                         .addParentStack(this);
+            	// Add the required Intent extras as appropriate
                 tsb.editIntentAt(tsb.getIntentCount() - 1)
                 	.putExtra(CategoryActivity.ARG_GENRE, mMovie.getGenre());
+                // Navigate up to the closest parent
             	tsb.startActivities();
                 finish();
             } else {
+            	// This activity is part of this app's task, so simply
+                // navigate up to the logical parent activity.
+            	// Add the required Intent extras as appropriate
             	upIntent.putExtra(CategoryActivity.ARG_GENRE, mMovie.getGenre());
                 NavUtils.navigateUpTo(this, upIntent);
             }
@@ -93,6 +113,7 @@ public class DetailActivity extends Activity implements OnItemClickListener {
 	
 	@Override
 	public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+		// Here we can navigate to peer activities
 		Movie movie = Data.getSimilarMovies(mMovie).get(position);
 		Intent intent = new Intent(this, DetailActivity.class);
 		intent.putExtra(DetailActivity.ARG_ID, movie.getId());

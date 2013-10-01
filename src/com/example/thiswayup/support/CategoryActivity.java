@@ -16,6 +16,11 @@ import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
 import com.example.thiswayup.R;
 
+/**
+ * Activity that accepts a single String extra in its Intent bundle that
+ * represents a genre category to display a list of movies.
+ *
+ */
 public class CategoryActivity extends Activity implements OnItemClickListener {
 	
 	public static final String ARG_GENRE = "com.example.thiswayup.GENRE";
@@ -48,7 +53,13 @@ public class CategoryActivity extends Activity implements OnItemClickListener {
 	
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+        	// This ID represents the Home or Up button. Since we
+        	// know we can never reach this particular Activity from
+        	// a different task, we can trivially call the following
+        	// which will navigate up one level in the application 
+        	// structure we have defined in the manifest.
             NavUtils.navigateUpFromSameTask(this);
             return true;
         }
