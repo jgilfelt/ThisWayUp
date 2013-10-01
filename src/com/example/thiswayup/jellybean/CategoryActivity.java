@@ -14,6 +14,15 @@ import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
 import com.example.thiswayup.R;
 
+/**
+ * Activity that accepts a single String extra in its Intent bundle that
+ * represents a genre category to display a list of movies.
+ * 
+ * Notice we do not need to implement Up behavior in onOptionsItemSelected. 
+ * This is handled for us in Jelly Bean and above when we have a 
+ * parentActivityName defined in our manifest.
+ *
+ */
 public class CategoryActivity extends Activity implements OnItemClickListener {
 	
 	public static final String ARG_GENRE = "com.example.thiswayup.GENRE";

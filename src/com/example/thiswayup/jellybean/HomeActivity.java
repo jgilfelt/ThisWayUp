@@ -13,6 +13,15 @@ import android.widget.TextView;
 import com.example.thiswayup.Data;
 import com.example.thiswayup.R;
 
+/**
+ * This Activity can be considered 'home' for the Up navigation samples
+ * even though it is a descendant of SamplesListActivity.
+ * 
+ * Notice we do not need to implement Up behavior in onOptionsItemSelected. 
+ * This is handled for us in Jelly Bean and above when we have a 
+ * parentActivityName defined in our manifest.
+ * 
+ */
 public class HomeActivity extends Activity implements OnItemClickListener {
 
 	ListView mList;

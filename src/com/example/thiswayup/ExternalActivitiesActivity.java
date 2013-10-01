@@ -10,12 +10,18 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/**
+ * Demonstrates best practices for navigation when launching external Activities 
+ * that represent a logical break in your application, e.g. sharing.
+ * 
+ */
 public class ExternalActivitiesActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_external);
+		
 		// Show the Up button in the action bar.
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
@@ -39,6 +45,10 @@ public class ExternalActivitiesActivity extends Activity {
 		b.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				// Use the ShareCompat class in the support library if you need
+				// to share content via the ACTION_SEND/ACTION_SEND_MULTIPLE
+				// Intent protocol. ShareCompat will apply  
+				// FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET automatically.
 				ShareCompat.IntentBuilder.from(ExternalActivitiesActivity.this)
 	        		.setType("text/plain")
 	        		.setText("I'm sharing!")

@@ -4,10 +4,10 @@
     <string name="app_name">This Way Up</string>
     
     <string name="title_activity_samples_list">This Way Up</string>
-    <string name="title_activity_home">Up Navigation (Jellybean)</string>
-    <string name="title_activity_notificaton">From Notification (Jellybean)</string>
-    <string name="title_activity_outside_task">From Outside Browser Task (Jellybean)</string>
-    <string name="title_app_widget">This Way Up (Jellybean)</string>
+    <string name="title_activity_home">Up Navigation (Jelly Bean)</string>
+    <string name="title_activity_notificaton">From Notification (Jelly Bean)</string>
+    <string name="title_activity_outside_task">From Outside Browser Task (Jelly Bean)</string>
+    <string name="title_app_widget">This Way Up (Jelly Bean)</string>
     <string name="title_activity_home_support">Up Navigation (Support)</string>
     <string name="title_activity_notificaton_support">From Notification (Support)</string>
     <string name="title_activity_outside_task_support">From Outside Browser Task (Support)</string>
@@ -40,10 +40,7 @@
     <string name="info_detail_from_nav_drawer">from nav drawer root</string>
     <string name="info_external">info_external</string>
     <string name="info_drawer_root">info_drawer_root</string>
-    
-    
-    
-    
-    
+    <string name="notification_demo">Notification Demo</string>
+    <string name="this_will_open_the_detail_activity">This will open the detail Activity</string>
 
 </resources>

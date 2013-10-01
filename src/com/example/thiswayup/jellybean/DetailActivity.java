@@ -18,6 +18,16 @@ import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
 import com.example.thiswayup.R;
 
+/**
+ * Activity that accepts a integer extra in its Intent bundle or data
+ * supplied from a http deep link that represents an id for which 
+ * to display details for a particular movie.
+ * 
+ * Notice we do not need to implement Up behavior in onOptionsItemSelected. 
+ * This is handled for us in Jelly Bean and above when we have a 
+ * parentActivityName defined in our manifest.
+ *
+ */
 public class DetailActivity extends Activity implements OnItemClickListener {
 
 	public static final String ARG_ID = "com.example.thiswayup.ID";
@@ -39,7 +49,7 @@ public class DetailActivity extends Activity implements OnItemClickListener {
 		String infoText = null;
 		
 		if (data != null) {
-			// launched externally
+			// Activity was launched externally from a deep link
 			String id = data.getLastPathSegment();
 			mId = Integer.parseInt(id);
 			infoText = getString(R.string.info_detail_from_outside_task);
@@ -70,22 +80,20 @@ public class DetailActivity extends Activity implements OnItemClickListener {
 		
 	}
 
-	
-//	@SuppressLint("NewApi")
-//	@Override
-//	public void onPrepareNavigateUpTaskStack(TaskStackBuilder builder) {
-//		super.onPrepareNavigateUpTaskStack(builder);
-//		Log.d("Up", "onPrepareNavigateUpTaskStack");
-//		Intent parent = builder.editIntentAt(builder.getIntentCount()-1);
-//		parent.putExtra(CategoryActivity.ARG_GENRE, genre);
-//		//super.onPrepareNavigateUpTaskStack(builder);
-//	}
-
-
-
 	@TargetApi(Build.VERSION_CODES.JELLY_BEAN)
 	@Override
 	public Intent getParentActivityIntent() {
+		
+		// Our parent activity (CategoryActivity) requires Intent
+		// extras in order to display the appropriate genre. 
+		//
+		// Here we override getParentActivityIntent, call the super
+		// implementation and supply the required extra to the 
+		// returned Intent.
+		//
+		// We could also override onPrepareNavigateUpTaskStack if we 
+		// needed to manipulate Intents at deeper levels.
+		
 		Intent parent = super.getParentActivityIntent();
 		parent.putExtra(CategoryActivity.ARG_GENRE, mMovie.getGenre());
 		return parent;
@@ -93,6 +101,7 @@ public class DetailActivity extends Activity implements OnItemClickListener {
 	
 	@Override
 	public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+		// Here we can navigate to peer activities
 		Movie movie = Data.getSimilarMovies(mMovie).get(position);
 		Intent intent = new Intent(this, DetailActivity.class);
 		intent.putExtra(DetailActivity.ARG_ID, movie.getId());
