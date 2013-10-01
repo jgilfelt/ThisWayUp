@@ -19,7 +19,7 @@
     <string name="notification_demo">Notification Demo</string>
     <string name="this_will_open_the_detail_activity">This will open the detail Activity</string>
     <string name="genres">Genres</string>
-    <string name="similar_movies_">Similar movies:</string>
+    <string name="similar_movies_">Similar Movies</string>
     <string name="launch_browser_task">Launch Browser Task</string>
     <string name="add_widget">Add widget</string>
     <string name="pick_intent">Pick Intent</string>
@@ -31,17 +31,16 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     
-    <string name="info_home">info_home</string>
-    <string name="info_category">info_category</string>
-    <string name="info_notification">info_notification</string>
-    <string name="info_browser_task">info_browser_task</string>
-    <string name="info_detail">info_detail</string>
-    <string name="info_detail_from_notification">from notification</string>
-    <string name="info_detail_from_widget">from widget</string>
-    <string name="info_detail_from_outside_task">from outside task</string>
-    <string name="info_detail_from_nav_drawer">from nav drawer root</string>
-    <string name="info_external">info_external</string>
-    <string name="info_drawer_root">info_drawer_root</string>
+    <string name="info_home">This Activity uses the simple case of up navigation that does not ever need to cross across different tasks. Press Up or Back to return to the main examples list.</string>
+    <string name="info_category">This Activity uses the simple case of up navigation that does not ever need to cross across different tasks. We need to supply an extra with the Intent used to start this Activity (in both forwards and upwards navigation) to display titles in the appropriate genre. Press Up or Back to return to the Genres list.</string>
+    <string name="info_notification">This Activity demonstrates the proper pattern for posting a direct notification that targets an Activity deep within your app hierarchy.</string>
+    <string name="info_browser_task">Press the button below to lauch your default web browser app in a different task. The page will contain a deep link back into this app to demonstrate navigating Up from a different task.</string>
+    <string name="info_detail">This detail Activity demonstrates application content with navigation peers (or siblings). Click on a similar movie title to navigate across this level of the heirachy. Pressing back will return to a previously viewed movie if you navigated here from a peer. Pressing Up will always return you the appropriate genre category and clear the back history.</string>
+    <string name="info_detail_from_notification">You have navigated to this detail Activity directly from a notification. A new task back stack has been synthesized and any prior task context has been abandoned. Pressing Up or Back will return you to the appropriate genre category.</string>
+    <string name="info_detail_from_widget">You have navigated to this detail Activity directly from a home screen widget. A new task back stack has been synthesized and any prior task context has been abandoned. Pressing Up or Back will return you to the appropriate genre category.</string>
+    <string name="info_detail_from_outside_task">You have navigated to this detail Activity from an outside task. Pressing Back will return you to the browser Activity that launched it. Pressing Up will create a new task with a synthesized back stack and return you to the appropriate genre category.</string>
+    <string name="info_detail_from_nav_drawer">The navigation drawer should be accessible deeper within a navigation hierarchy only via the bezel swipe gesture. Up navigation still applies when the drawer is closed. Navigation from deeper levels allows a user to jump across the navigation hierarchy at will and should be treated as Up navigation from a different task, replacing the current task stack.</string>
+    <string name="info_external">When launching another application\'s activity to allow the user to say, compose an email or pick a photo attachment, you generally don\'t want the user to return to this activity if they relaunch your app from the Launcher (the device home screen). Use the buttons below to launch external activities that will be cleared if the task is backgrounded and subsequently resumed from the home screen.</string>
+    <string name="info_drawer_root">This Activity demonstrates navigation for root level Activities using a navigation drawer. The drawer indicator is always present with the home button and no navigation history is created when selecting a target. Select a movie title to see an example of navigation drawer usage outside of a root Activity.</string>
     
-
 </resources>
