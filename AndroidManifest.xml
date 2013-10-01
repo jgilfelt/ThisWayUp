@@ -229,7 +229,7 @@
             android:parentActivityName="com.example.thiswayup.drawer.RootDrawerActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.thiswayup.navdrawer.RootDrawerActivity" />
+                android:value="com.example.thiswayup.drawer.RootDrawerActivity" />
         </activity>
         
     </application>
