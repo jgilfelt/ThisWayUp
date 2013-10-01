@@ -175,6 +175,36 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/sample_app_widget_info" />
         </receiver>
+
+        <!-- ************************************* -->
+        <!--           OTHER SAMPLES               -->
+        <!-- ************************************* -->     
+        
+        <activity
+            android:name="com.example.thiswayup.AppWidgetInfoActivity"
+            android:label="@string/title_activity_app_widget_info"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.ExternalActivitiesActivity"
+            android:label="@string/title_activity_external"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
         
         <!-- ************************************* -->
         <!--           NAV DRAWER SAMPLES          -->
@@ -200,23 +230,6 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.thiswayup.navdrawer.RootDrawerActivity" />
-        </activity>
-
-        <!-- ************************************* -->
-        <!--      EXTERNAL ACTIVITIES SAMPLE       -->
-        <!-- ************************************* -->     
-        
-        <activity
-            android:name="com.example.thiswayup.ExternalActivitiesActivity"
-            android:label="@string/title_activity_external"
-            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.thiswayup.SamplesListActivity" />
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="com.example.thiswayup.SAMPLE" />
-            </intent-filter>
         </activity>
         
     </application>
