@@ -16,6 +16,8 @@
     <string name="title_activity_root_drawer">Navigation Drawer</string>
     
     <string name="post_notification">Post Notification</string>
+    <string name="notification_demo">Notification Demo</string>
+    <string name="this_will_open_the_detail_activity">This will open the detail Activity</string>
     <string name="genres">Genres</string>
     <string name="similar_movies_">Similar movies:</string>
     <string name="launch_browser_task">Launch Browser Task</string>
@@ -40,7 +42,6 @@
     <string name="info_detail_from_nav_drawer">from nav drawer root</string>
     <string name="info_external">info_external</string>
     <string name="info_drawer_root">info_drawer_root</string>
-    <string name="notification_demo">Notification Demo</string>
-    <string name="this_will_open_the_detail_activity">This will open the detail Activity</string>
+    
 
 </resources>
