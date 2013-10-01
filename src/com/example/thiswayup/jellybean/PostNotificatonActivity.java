@@ -74,7 +74,7 @@ public class PostNotificatonActivity extends Activity {
         	.setTicker(getString(R.string.notification_demo))
         	.setSmallIcon(R.drawable.ic_stat_notification)
         	.setLargeIcon(BitmapFactory.decodeResource(getResources(), movie.getImage()))
-        	.setContentTitle(movie.getTitle())
+        	.setContentTitle(movie.toString())
         	.setContentText(getString(R.string.this_will_open_the_detail_activity))
         	.setAutoCancel(true)
         	// Supply a pending intent to launch the task defined by the constructed stack

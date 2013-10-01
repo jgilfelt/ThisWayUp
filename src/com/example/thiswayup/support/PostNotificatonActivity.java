@@ -78,11 +78,11 @@ public class PostNotificatonActivity extends Activity {
         
 		// Construct a new notification
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
-        	.setTicker("Notification Demo")
+        	.setTicker(getString(R.string.notification_demo))
         	.setSmallIcon(R.drawable.ic_stat_notification)
         	.setLargeIcon(BitmapFactory.decodeResource(getResources(), movie.getImage()))
-        	.setContentTitle(movie.getTitle())
-        	.setContentText("This will open the detail Activity")
+        	.setContentTitle(movie.toString())
+        	.setContentText(getString(R.string.this_will_open_the_detail_activity))
         	.setAutoCancel(true)
         	// Supply a pending intent to launch the task defined by the constructed stack
         	.setContentIntent(tsb.getPendingIntent(0, PendingIntent.FLAG_CANCEL_CURRENT));
