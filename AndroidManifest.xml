@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.thiswayup"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        
+        <activity
+            android:name="com.example.thiswayup.SamplesListActivity"
+            android:label="@string/title_activity_samples_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- ************************************* -->
+        <!--           JELLYBEAN API SAMPLES       -->
+        <!-- ************************************* -->     
+        
+        <activity
+            android:name="com.example.thiswayup.jellybean.HomeActivity"
+            android:enabled="@bool/atLeastJellyBean"
+            android:label="@string/title_activity_home"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.jellybean.CategoryActivity"
+            android:enabled="@bool/atLeastJellyBean"
+            android:parentActivityName="com.example.thiswayup.jellybean.HomeActivity" >
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.jellybean.DetailActivity"
+            android:enabled="@bool/atLeastJellyBean"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.thiswayup.jellybean.CategoryActivity" >
+            <!-- enables deep links -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="thiswayup.example.com"
+                    android:pathPrefix="/jellybean"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.jellybean.PostNotificatonActivity"
+            android:enabled="@bool/atLeastJellyBean"
+            android:label="@string/title_activity_notificaton"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.jellybean.LaunchBrowserTaskActivity"
+            android:enabled="@bool/atLeastJellyBean"
+            android:label="@string/title_activity_outside_task"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <receiver 
+            android:name="com.example.thiswayup.jellybean.SampleAppWidget" 
+            android:enabled="@bool/atLeastJellyBean"
+            android:label="@string/title_app_widget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/sample_app_widget_info" />
+        </receiver>
+
+        <!-- ************************************* -->
+        <!--           SUPPORT API SAMPLES         -->
+        <!-- ************************************* -->     
+        
+        <activity
+            android:name="com.example.thiswayup.support.HomeActivity"
+            android:label="@string/title_activity_home_support"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.support.CategoryActivity"
+            android:parentActivityName="com.example.thiswayup.support.HomeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.support.HomeActivity" />
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.support.DetailActivity"
+            android:label="@string/app_name"
+            android:parentActivityName="com.example.thiswayup.support.CategoryActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.support.CategoryActivity" />
+            <!-- enables deep links -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="thiswayup.example.com"
+                    android:pathPrefix="/support"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.support.PostNotificatonActivity"
+            android:label="@string/title_activity_notificaton_support"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.support.LaunchBrowserTaskActivity"
+            android:label="@string/title_activity_outside_task_support"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+
+        <receiver 
+            android:name="com.example.thiswayup.support.SampleAppWidget"
+            android:label="@string/title_app_widget_support" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/sample_app_widget_info" />
+        </receiver>
+        
+        <!-- ************************************* -->
+        <!--           NAV DRAWER SAMPLES          -->
+        <!-- ************************************* -->        
+        
+        <activity
+            android:name="com.example.thiswayup.drawer.RootDrawerActivity"
+            android:label="@string/title_activity_root_drawer" 
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.drawer.DetailDrawerActivity"
+            android:label="@string/title_activity_root_drawer"
+            android:parentActivityName="com.example.thiswayup.drawer.RootDrawerActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.navdrawer.RootDrawerActivity" />
+        </activity>
+
+        <!-- ************************************* -->
+        <!--      EXTERNAL ACTIVITIES SAMPLE       -->
+        <!-- ************************************* -->     
+        
+        <activity
+            android:name="com.example.thiswayup.ExternalActivitiesActivity"
+            android:label="@string/title_activity_external"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+    </application>
+
+</manifest>

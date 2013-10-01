@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">This Way Up</string>
+    
+    <string name="title_activity_samples_list">This Way Up</string>
+    <string name="title_activity_home">Up Navigation (Jellybean)</string>
+    <string name="title_activity_notificaton">From Notification (Jellybean)</string>
+    <string name="title_activity_outside_task">From Outside Browser Task (Jellybean)</string>
+    <string name="title_app_widget">This Way Up (Jellybean)</string>
+    <string name="title_activity_home_support">Up Navigation (Support)</string>
+    <string name="title_activity_notificaton_support">From Notification (Support)</string>
+    <string name="title_activity_outside_task_support">From Outside Browser Task (Support)</string>
+    <string name="title_app_widget_support">This Way Up (Support)</string>
+    <string name="title_activity_external">External Activities</string>
+    <string name="title_activity_root_drawer">Navigation Drawer</string>
+    
+    <string name="post_notification">Post Notification</string>
+    <string name="genres">Genres</string>
+    <string name="similar_movies_">Similar movies:</string>
+    <string name="launch_browser_task">Launch Browser Task</string>
+    <string name="add_widget">Add widget</string>
+    <string name="pick_intent">Pick Intent</string>
+    <string name="share_shareutils_">Share (ShareUtils)</string>
+    <string-array name="drawer_array">
+        <item>By Title</item>
+        <item>By Year</item>
+    </string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    
+    <string name="info_home">info_home</string>
+    <string name="info_category">info_category</string>
+    <string name="info_notification">info_notification</string>
+    <string name="info_browser_task">info_browser_task</string>
+    <string name="info_detail">info_detail</string>
+    <string name="info_detail_from_notification">from notification</string>
+    <string name="info_detail_from_widget">from widget</string>
+    <string name="info_detail_from_outside_task">from outside task</string>
+    <string name="info_detail_from_nav_drawer">from nav drawer root</string>
+    <string name="info_external">info_external</string>
+    <string name="info_drawer_root">info_drawer_root</string>
+    
+    
+    
+    
+    
+
+</resources>
