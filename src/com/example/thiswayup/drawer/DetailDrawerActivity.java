@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
-import com.example.thiswayup.R;
+import com.readystatesoftware.example.thiswayup.R;
 
 /**
  * This example illustrates usage of the DrawerLayout widget for an activity deep within an

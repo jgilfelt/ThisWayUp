@@ -11,7 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.thiswayup.Data;
-import com.example.thiswayup.R;
+import com.readystatesoftware.example.thiswayup.R;
 
 /**
  * This Activity can be considered 'home' for the Up navigation samples

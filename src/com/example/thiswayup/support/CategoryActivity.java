@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
-import com.example.thiswayup.R;
+import com.readystatesoftware.example.thiswayup.R;
 
 /**
  * Activity that accepts a single String extra in its Intent bundle that

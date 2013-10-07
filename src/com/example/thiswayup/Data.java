@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 
 import android.util.SparseArray;
+import com.readystatesoftware.example.thiswayup.R;
 
 public class Data {
 

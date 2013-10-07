@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.example.thiswayup.R;
+import com.readystatesoftware.example.thiswayup.R;
 
 /**
  * This Activity simply provides a button that launches content in 

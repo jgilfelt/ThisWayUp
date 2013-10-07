@@ -16,7 +16,7 @@ import android.widget.Button;
 
 import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
-import com.example.thiswayup.R;
+import com.readystatesoftware.example.thiswayup.R;
 
 /**
  * Activity demonstrating the proper pattern for posting notifications

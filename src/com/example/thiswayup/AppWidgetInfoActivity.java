@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.MenuItem;
+import com.readystatesoftware.example.thiswayup.R;
 
 public class AppWidgetInfoActivity extends Activity {
 

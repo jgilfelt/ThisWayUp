@@ -12,7 +12,7 @@ import android.widget.RemoteViews;
 
 import com.example.thiswayup.Data;
 import com.example.thiswayup.Data.Movie;
-import com.example.thiswayup.R;
+import com.readystatesoftware.example.thiswayup.R;
 
 /**
  * App Widget demonstrating the proper pattern for launching an Activity 
