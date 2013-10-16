@@ -34,7 +34,7 @@ public class LaunchBrowserTaskActivity extends Activity {
 			public void onClick(View v) {
 				// Launch the browser in an outside task rooted at the home screen
 				Intent intent = new Intent(Intent.ACTION_VIEW, 
-						Uri.parse("https://dl.dropboxusercontent.com/u/3982805/thiswayup_support.html"))
+						Uri.parse("http://jgilfelt.github.io/ThisWayUp/thiswayup_support.html"))
 							.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
 				startActivity(intent);
 			}
