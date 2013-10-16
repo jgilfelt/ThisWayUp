@@ -6,19 +6,39 @@ Sample app for my Droidcon London 2013 talk - "This Way Up: Implementing Effecti
 Slides: TBA
 
 ![Example Image][1]
-![Example Image][2]
-![Example Image][3]
 
 <a href="https://play.google.com/store/apps/details?id=com.readystatesoftware.example.thiswayup">
   <img alt="Android app on Google Play"
        src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
 </a>
 
+Samples
+-------
+
+This app includes sample code demonstrating the following:
+
+- Ancestral Up navigation using Jelly Bean APIs
+- Ancestral Up navigation using Support Library APIs (NavUtils)
+- Deep navigation from direct notifications
+- Deep navigation from home screen widgets
+- Navigation from outside tasks
+- Launching external app activities
+- Navigation drawer usage at root and deep level activities
+
+
+Action Bar Compatibility
+------------------------
+
+This app is set to support only API 14 and above to simplify dependencies, but the code will work perfectly well (with minor modifications) for which ever Action Bar compatibility library you use:
+
+- Use the samples in `com.example.thiswayup.jellybean` for ActionBarCompat
+- Use the samples in `com.example.thiswayup.support` for ActionBarSherlock
+
 License
 -------
 
     Copyright 2013 readyState Software Ltd
-    Copyrisht 2012 The Android Open Source Project
+    Copyright 2012 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -35,8 +55,4 @@ License
 
 
 
- [1]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_1_framed.png
- [2]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_2_framed.png
- [3]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_4_framed.png
-
-
+ [1]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/framed.png
