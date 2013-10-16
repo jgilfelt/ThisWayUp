@@ -24,7 +24,7 @@
     <string name="launch_browser_task">Launch Browser Task</string>
     <string name="add_widget">Add widget</string>
     <string name="pick_intent">Pick Intent</string>
-    <string name="share_shareutils_">Share (ShareUtils)</string>
+    <string name="share_shareutils_">Share (ShareCompat)</string>
     <string-array name="drawer_array">
         <item>Movies by Title</item>
         <item>Movies by Year</item>
