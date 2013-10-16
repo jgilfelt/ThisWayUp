@@ -9,6 +9,11 @@ Slides: TBA
 ![Example Image][2]
 ![Example Image][3]
 
+<a href="https://play.google.com/store/apps/details?id=com.readystatesoftware.example.thiswayup">
+  <img alt="Android app on Google Play"
+       src="https://developer.android.com/images/brand/en_app_rgb_wo_60.png" />
+</a>
+
 License
 -------
 
@@ -30,9 +35,8 @@ License
 
 
 
- [1]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_1.png
- [2]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_2.png
- [3]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_3.png
- [4]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_4.png
- [5]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_5.png
+ [1]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_1_framed.png
+ [2]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_2_framed.png
+ [3]: https://raw.github.com/jgilfelt/ThisWayUp/master/art/Screenshot_4_framed.png
+
 
