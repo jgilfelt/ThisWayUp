@@ -13,10 +13,9 @@ import android.widget.Button;
 import com.readystatesoftware.example.thiswayup.R;
 
 /**
- * This Activity simply provides a button that launches content in 
- * another app in an outside task to demonstrate navigating Up from
- * a different task.
- *
+ * This Activity simply provides a button that launches content in another app
+ * in an outside task to demonstrate navigating Up from a different task.
+ * 
  */
 public class LaunchBrowserTaskActivity extends Activity {
 
@@ -24,30 +23,33 @@ public class LaunchBrowserTaskActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_launch_browser);
-		
+
 		// Show the Up button in the action bar.
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
+
 		Button b = (Button) findViewById(R.id.launch_browser);
 		b.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// Launch the browser in an outside task rooted at the home screen
-				Intent intent = new Intent(Intent.ACTION_VIEW, 
+				// Launch the browser in an outside task rooted at the home
+				// screen
+				Intent intent = new Intent(
+						Intent.ACTION_VIEW,
 						Uri.parse("http://jgilfelt.github.io/ThisWayUp/thiswayup_support.html"))
-							.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_TASK_ON_HOME);
+						.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK
+								| Intent.FLAG_ACTIVITY_TASK_ON_HOME);
 				startActivity(intent);
 			}
 		});
 	}
-	
+
 	@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            NavUtils.navigateUpFromSameTask(this);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-	
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == android.R.id.home) {
+			NavUtils.navigateUpFromSameTask(this);
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
+
 }

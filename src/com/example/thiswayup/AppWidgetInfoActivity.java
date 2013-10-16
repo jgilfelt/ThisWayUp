@@ -25,5 +25,5 @@ public class AppWidgetInfoActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
+
 }

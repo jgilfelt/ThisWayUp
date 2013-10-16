@@ -20,7 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class SamplesListActivity extends ListActivity {
-	
+
 	private final IntentAdapter mAdapter = new IntentAdapter();
 
 	@Override
@@ -29,11 +29,11 @@ public class SamplesListActivity extends ListActivity {
 		setListAdapter(mAdapter);
 		mAdapter.refresh();
 	}
-	
+
 	@Override
-    protected void onListItemClick(ListView l, View v, int position, long id) {
-        startActivity(mAdapter.getItem(position));
-    }
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		startActivity(mAdapter.getItem(position));
+	}
 
 	private class IntentAdapter extends BaseAdapter {
 		private final List<CharSequence> mNames;
@@ -52,10 +52,12 @@ public class SamplesListActivity extends ListActivity {
 			mainIntent.addCategory("com.example.thiswayup.SAMPLE");
 
 			PackageManager pm = getPackageManager();
-			final List<ResolveInfo> matches = pm.queryIntentActivities(mainIntent, 0);
+			final List<ResolveInfo> matches = pm.queryIntentActivities(
+					mainIntent, 0);
 			for (ResolveInfo match : matches) {
 				Intent intent = new Intent();
-				intent.setClassName(match.activityInfo.packageName, match.activityInfo.name);
+				intent.setClassName(match.activityInfo.packageName,
+						match.activityInfo.name);
 				final CharSequence name = match.loadLabel(pm);
 				mNames.add(name);
 				mIntents.put(name, intent);
@@ -81,9 +83,11 @@ public class SamplesListActivity extends ListActivity {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			TextView tv = (TextView)convertView;
+			TextView tv = (TextView) convertView;
 			if (convertView == null) {
-				tv = (TextView) LayoutInflater.from(SamplesListActivity.this).inflate(android.R.layout.simple_list_item_1, parent, false);
+				tv = (TextView) LayoutInflater.from(SamplesListActivity.this)
+						.inflate(android.R.layout.simple_list_item_1, parent,
+								false);
 			}
 			tv.setText(mNames.get(position));
 			return tv;
