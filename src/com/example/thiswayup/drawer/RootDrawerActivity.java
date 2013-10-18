@@ -40,7 +40,7 @@ public class RootDrawerActivity extends BaseDrawerActivity {
 	@Override
 	protected void onDrawerItemSelected(int position) {
 
-		// As this is our root Activity, draw item selection should initiate
+		// As this is our root Activity, drawer item selection should initiate
 		// a 'view switch' action by replacing the Activity's current fragment
 		// content.
 

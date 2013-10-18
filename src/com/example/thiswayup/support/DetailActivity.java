@@ -100,7 +100,6 @@ public class DetailActivity extends Activity implements OnItemClickListener {
 						.putExtra(CategoryActivity.ARG_GENRE, mMovie.getGenre());
 				// Navigate up to the closest parent
 				tsb.startActivities();
-				finish();
 			} else {
 				// This activity is part of this app's task, so simply
 				// navigate up to the logical parent activity.

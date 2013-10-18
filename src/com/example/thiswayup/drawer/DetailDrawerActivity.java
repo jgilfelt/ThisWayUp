@@ -86,12 +86,11 @@ public class DetailDrawerActivity extends BaseDrawerActivity implements
 		// navigation drawer that should be used outside of the root activity
 		// of a task.
 
-		TaskStackBuilder ts = TaskStackBuilder.create(this)
-				.addParentStack(this);
-		ts.editIntentAt(ts.getIntentCount() - 1)
-				.putExtra(RootDrawerActivity.ARG_SORT, position);
-		ts.startActivities();
-		finish();
+		TaskStackBuilder.create(this)
+				.addParentStack(RootDrawerActivity.class)
+				.addNextIntent(new Intent(this, RootDrawerActivity.class)
+						.putExtra(RootDrawerActivity.ARG_SORT, position))
+				.startActivities();
 
 	}
 
