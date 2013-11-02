@@ -3,7 +3,7 @@ This Way Up
 
 Sample app for my Droidcon London 2013 talk - "This Way Up: Implementing Effective Navigation".
 
-Slides: TBA
+Slides: https://speakerdeck.com/jgilfelt/this-way-up-implementing-effective-navigation-on-android
 
 ![Example Image][1]
 
