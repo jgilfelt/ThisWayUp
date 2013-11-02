@@ -82,6 +82,17 @@
                 <category android:name="com.example.thiswayup.SAMPLE" />
             </intent-filter>
         </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.jellybean.RetainParentInstanceActivity"
+            android:enabled="@bool/atLeastJellyBean"
+            android:label="@string/title_activity_retain_instance"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
 
         <receiver 
             android:name="com.example.thiswayup.jellybean.SampleAppWidget" 
@@ -155,6 +166,19 @@
         <activity
             android:name="com.example.thiswayup.support.LaunchBrowserTaskActivity"
             android:label="@string/title_activity_outside_task_support"
+            android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.thiswayup.SamplesListActivity" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.example.thiswayup.SAMPLE" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.example.thiswayup.support.RetainParentInstanceActivity"
+            android:label="@string/title_activity_retain_instance_support"
             android:parentActivityName="com.example.thiswayup.SamplesListActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
