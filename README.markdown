@@ -22,6 +22,7 @@ This app includes sample code demonstrating the following:
 - Deep navigation from direct notifications
 - Deep navigation from home screen widgets
 - Navigation from outside tasks
+- Retaining a parent activity instance on Up
 - Launching external app activities
 - Navigation drawer usage at root and deep level activities
 

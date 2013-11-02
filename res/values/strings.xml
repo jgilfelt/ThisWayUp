@@ -46,6 +46,6 @@
     <string name="info_external">When launching another application\'s Activity to allow the user to say, compose an email or pick a photo attachment, you generally don\'t want the user to return to this Activity if they relaunch your app from the launcher (the device home screen). Use the buttons below to launch external Activities that will be cleared if this task is backgrounded and then subsequently resumed from the home screen.</string>
     <string name="info_drawer_root">This Activity demonstrates navigation for root level Activities using a navigation drawer. The drawer indicator is always present with the home button and no navigation history is created when selecting a target. Drill down to see an example of navigation drawer usage outside of a root Activity.</string>
     <string name="info_appwidget">Add the included app widget to your home screen to demonstrate launching an Activity deep within your navigation hierarchy.</string>
-    <string name="info_retain">zzz</string>
+    <string name="info_retain">This Activity demonstrates how you can retain the instance of a parent Activity (instead of recreating it) when navigating Up from the same task. The Up Intent will be delivered to the current parent instance\'s onNewIntent() method. Press Up or Back to return to the main examples list.</string>
     
 </resources>
